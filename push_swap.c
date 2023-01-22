@@ -6,14 +6,12 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 18:26:31 by aarbaoui          #+#    #+#             */
-/*   Updated: 2023/01/22 07:12:09 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/01/22 08:21:40 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*TODO:
-	- make sure if the user only puts in - or + it will be considered as an error
-*/
+
 void	sort_two(t_stack **a)
 {
 	if (!is_sorted(*a))
