@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:00:23 by aarbaoui          #+#    #+#             */
-/*   Updated: 2023/01/15 14:29:21 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/01/22 08:18:37 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	is_allint(char **av)
 		j = 0;
 		while (av[i][j])
 		{
-			if (!ft_isdigit(av[i][j]) && av[i][j] != '-')
+			if (!ft_isdigit(av[i][j]) && av[i][j] != '-' && av[i][j] != '+')
 			{
 				ft_putstr_fd("Error: Invalid arguments\n", 2);
 				exit(1);

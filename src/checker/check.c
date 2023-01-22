@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:42:47 by aarbaoui          #+#    #+#             */
-/*   Updated: 2023/01/22 06:58:52 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/01/22 08:19:28 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ void	checker(t_stack **a, t_stack **b)
 		free(op);
 	}
 	if (is_sorted(*a) && !(*b))
-		write(1, "OK", 2);
+		write(1, "OK\n", 3);
 	else
-		write(1, "KO", 2);
+		write(1, "KO\n", 3);
 }
 
 int	main(int ac, char *av[])

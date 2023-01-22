@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:18:56 by aarbaoui          #+#    #+#             */
-/*   Updated: 2023/01/12 12:09:54 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/01/22 08:19:05 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,17 @@ long	ft_atoi(const char *str)
 	res = 0;
 	while (ft_isspace(str[i]))
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		neg = -1;
+		if (!ft_isdigit(str[i + 1]))
+		{
+			ft_putstr_fd("Error: Invalid agruments.\n", 2);
+			exit(1);
+		}
+		if (str[i] == '+')
+			neg = -1;
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
 	while (ft_isdigit(str[i]))
 		res = res * 10 + (str[i++] - '0');
 	return (res * neg);
