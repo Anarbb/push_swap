@@ -1,7 +1,7 @@
 NAME        := push_swap
 CNAME       := checker
 CC        := cc
-FLAGS    := -Wall -Wextra -Werror -I inc
+FLAGS    := -Wall -Wextra -Werror -I inc 
 
 SRCS        :=      push_swap.c \
 						  src/libft/ft_atoi.c \
@@ -151,6 +151,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
-
-
+.PHONY:		all clean fclean re bonus

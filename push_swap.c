@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 18:26:31 by aarbaoui          #+#    #+#             */
-/*   Updated: 2023/01/22 06:59:57 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/01/22 07:12:09 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int	main(int ac, char *av[])
 {
 	t_stack	*a;
 	t_stack	*b;
-	int		slen;
 	t_stack	*tmp;
+	int		slen;
 
 	a = NULL;
 	b = NULL;
