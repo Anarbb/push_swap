@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 12:36:52 by aarbaoui          #+#    #+#             */
-/*   Updated: 2023/01/11 17:46:43 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/01/20 17:00:34 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*get_next_line(int fd)
 {
-	char static	*buffer;
+	static char	*buffer;
 	char		*read_res;
 	char		*result;
 

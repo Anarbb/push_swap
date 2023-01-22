@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 12:54:29 by aarbaoui          #+#    #+#             */
-/*   Updated: 2023/01/15 13:13:54 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:58:36 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 void	sb(t_stack **b, int fd)
 {
 	int		tmp;
-	t_stack	*tmp2;
 
 	if (*b == NULL || (*b)->next == NULL)
 		return ;
-	tmp2 = *b;
 	tmp = (*b)->value;
 	(*b)->value = (*b)->next->value;
 	(*b)->next->value = tmp;

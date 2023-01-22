@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:49:19 by aarbaoui          #+#    #+#             */
-/*   Updated: 2023/01/12 18:21:55 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:58:59 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,15 @@ static void	ft_norm(t_stack **a, t_stack **b, int i)
 void	sort_four(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp1;
-	t_stack	*tmp2;
 	int		i;
 	int		min;
 
 	tmp1 = *a;
-	tmp2 = *a;
 	min = tmp1->index;
 	while (tmp1 && tmp1->next)
 	{
 		if (tmp1->index < min)
-		{
-			tmp2 = tmp1;
 			min = tmp1->index;
-		}
 		tmp1 = tmp1->next;
 	}
 	i = find_index(*a, min);

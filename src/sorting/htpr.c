@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 16:12:36 by aarbaoui          #+#    #+#             */
-/*   Updated: 2023/01/12 18:21:49 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:59:30 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,8 @@ int	get_dis(t_stack *ptr, int index)
 
 void	push_two_top(t_stack **a, t_stack **b, int *index)
 {
-	int	j;
-
 	push_top(b, *index - 1);
 	pa(a, b, 1);
-	j = find_index(*a, *index);
 	push_top(b, *index);
 	(*index)--;
 	pa(a, b, 1);
@@ -51,11 +48,9 @@ void	push_two_top(t_stack **a, t_stack **b, int *index)
 
 void	push_top(t_stack **stk, int index)
 {
-	t_stack	*current;
 	int		i;
 	int		len;
 
-	current = *stk;
 	len = ft_stklen(*stk);
 	i = find_index(*stk, index);
 	if (i <= len - i)
