@@ -1,7 +1,12 @@
 NAME        := push_swap
 CNAME       := checker
-CC        := cc
-FLAGS    := -Wall -Wextra -Werror -I inc 
+CC			:= cc
+FLAGS		:= -Wall -Wextra -Werror -I inc
+
+HEADERS		:= inc/push_swap.h \
+					inc/ft_printf.h \
+					inc/libft.h \
+					inc/get_next_line.h
 
 SRCS        :=      push_swap.c \
 						  src/libft/ft_atoi.c \
@@ -113,11 +118,11 @@ SRCS_BONUS  :=      src/checker/check.c \
 						  src/sorting/algo.c \
 						  src/sorting/htpr.c \
 
-OBJS_BONUS  :=      ${SRCS_BONUS:.c=.o}
-			
 OBJS        := $(SRCS:.c=.o)
 
-.c.o:
+OBJS_BONUS  :=      ${SRCS_BONUS:.c=.o}
+
+%.o : %.c ${HEADERS}
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 CLR_RMV		:= \033[0m
@@ -126,7 +131,7 @@ GREEN		:= \033[1;32m
 YELLOW		:= \033[1;33m
 BLUE		:= \033[1;34m
 CYAN 		:= \033[1;36m
-RM		    := rm -f
+RM		    := rm -rf
 
 all:		${NAME}
 
@@ -135,20 +140,22 @@ ${NAME}:	${OBJS}
 			${CC} ${FLAGS} -o ${NAME} ${OBJS}
 			@echo "$(GREEN)$(NAME) created[0m ✔️"
 
-${CNAME}:   ${OBJS_BONUS}
-			${CC} ${FLAGS} -o ${CNAME} ${OBJS_BONUS}
-			@echo "$(GREEN) $(CNAME) created[0m ✔️"
 
-bonus:		all ${CNAME}
+${CNAME}:   ${OBJS_BONUS}
+			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(CNAME) ${CLR_RMV}..."
+			${CC} ${FLAGS} -o ${CNAME} ${OBJS_BONUS}
+			@echo "$(GREEN)$(CNAME) created[0m ✔️"
+
+bonus:		${CNAME}
 
 clean:
 			@ ${RM} $(OBJS) $(OBJS_BONUS)
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
+			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)|| $(CYAN)${CNAME} $(CLR_RMV)objs ✔️"
 
 fclean:		clean
 			@ ${RM} ${NAME} ${CNAME}
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
+			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)|| $(CYAN)${CNAME} $(CLR_RMV)binary ✔️"
 
 re:			fclean all
 
-.PHONY:		all clean fclean re bonus
+.PHONY:		all bonus clean fclean re
